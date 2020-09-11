@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   deportivo.hpp                                      :+:      :+:    :+:   */
+/*   turismo.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jschirad <jschirad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/11 11:07:04 by jschirad          #+#    #+#             */
-/*   Updated: 2020/09/11 11:42:05 by jschirad         ###   ########.fr       */
+/*   Created: 2020/09/10 17:07:06 by jschirad          #+#    #+#             */
+/*   Updated: 2020/09/11 11:15:58 by jschirad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEPORTIVO_HPP
-#define DEPORTIVO_HPP
+#ifndef TURISMO_HPP
+#define TURISMO_HPP
 
 #include <iostream>
 #include <string.h>
 #include "vehiculo.hpp"
-// HERENCIA PRIVADA
-class deportivo : private vehiculo
+
+class turismo : public vehiculo
 {
 private:
-	int	cilindrada;
+	int	numeroPuertas;
 public:
-	deportivo(std::string marca, std::string color, std::string modelo, int cilindrada);
-	~deportivo();
+	turismo(std::string marca, std::string color, std::string modelo, int numeroPuertas) : vehiculo(marca, color, modelo)
+	{
+		this->numeroPuertas = numeroPuertas;
+	}
+	~turismo();
 
-	int getCilindros();
-	// De esta manera podemos acceder a los atributos que estan privados e inaccesibles
-	std::string retornarMarca();
-	std::string retornarModelo();
+	int	getNumeroPuertas();
+	// Una forma de acceder a un atributo protegido de la clase base es crear un metodo
+	std::string returnModelo();
 };
 
 #endif

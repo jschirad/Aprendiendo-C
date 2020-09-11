@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   deportivo.hpp                                      :+:      :+:    :+:   */
+/*   furgoneta.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jschirad <jschirad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/11 11:07:04 by jschirad          #+#    #+#             */
-/*   Updated: 2020/09/11 11:42:05 by jschirad         ###   ########.fr       */
+/*   Created: 2020/09/11 12:02:15 by jschirad          #+#    #+#             */
+/*   Updated: 2020/09/11 12:11:43 by jschirad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEPORTIVO_HPP
-#define DEPORTIVO_HPP
+#ifndef FURGONETA_HPP
+#define FURGONETA_HPP
 
+#include "vehiculo.hpp"
 #include <iostream>
 #include <string.h>
-#include "vehiculo.hpp"
-// HERENCIA PRIVADA
-class deportivo : private vehiculo
+
+class furgoneta : protected vehiculo
 {
 private:
-	int	cilindrada;
+	int	carga;
 public:
-	deportivo(std::string marca, std::string color, std::string modelo, int cilindrada);
-	~deportivo();
+	furgoneta(std::string marca, std::string color, std::string modelo, int carga);
+	~furgoneta();
 
-	int getCilindros();
-	// De esta manera podemos acceder a los atributos que estan privados e inaccesibles
-	std::string retornarMarca();
-	std::string retornarModelo();
+	int getCarga();
+	std::string	retornarMarca();
 };
 
 #endif
