@@ -6,7 +6,7 @@
 /*   By: jschirad <jschirad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 11:19:57 by jschirad          #+#    #+#             */
-/*   Updated: 2020/09/14 11:03:07 by jschirad         ###   ########.fr       */
+/*   Updated: 2020/09/14 14:34:54 by jschirad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 FragTrap::FragTrap(std::string const &name) : name(name)
 {
-	std::cout << "Loading..." << this->name << " is prepare for the combat ! " << std::endl;
+	std::cout << "" << this->name << " created." << std::endl;
 	this->level = 1;
 	this->hitPoints = 100;
 	this->maxHitPoints = 100;
@@ -27,7 +27,7 @@ FragTrap::FragTrap(std::string const &name) : name(name)
 
 FragTrap::FragTrap(FragTrap const &obj) : name(obj.name)
 {
-	std::cout << "Loading..." << this->name << "is prepare for the combat" << std::endl;
+	std::cout << "" << this->name << " created." << std::endl;
 	this->level = obj.level;
 	this->hitPoints = obj.hitPoints;
 	this->maxHitPoints = obj.maxHitPoints;
@@ -58,12 +58,12 @@ FragTrap	&FragTrap::operator=(FragTrap const &obj)
 }
 
 std::string	FragTrap::quotes[6] = {
-	"Take that mo**** f***!",
-	"Get out my way ash****!",
-	"Tomorrow your sister will be mine !",
-	"I am thinking in your mom !",
-	"Have a nice day sweete!",
-	"Please kill me"
+	"Toma eso maldito!",
+	"Sal de mi camino o moriras!",
+	"Te arrpentiras de esto !",
+	"Fatality !",
+	"Mortality !",
+	"Voy a matarte !"
 };
 
 void	FragTrap::meleeAttack(std::string const	&target)

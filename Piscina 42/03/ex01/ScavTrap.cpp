@@ -6,7 +6,7 @@
 /*   By: jschirad <jschirad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 11:19:57 by jschirad          #+#    #+#             */
-/*   Updated: 2020/09/14 11:01:12 by jschirad         ###   ########.fr       */
+/*   Updated: 2020/09/14 14:41:21 by jschirad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 ScavTrap::ScavTrap(std::string const &name) : name(name)
 {
-	std::cout << "Loading..." << this->name << " is prepare for the combat ! " << std::endl;
+	std::cout << "" << this->name << " created!" << std::endl;
 	this->level = 1;
 	this->hitPoints = 100;
 	this->maxHitPoints = 100;
-	this->energyPoints = 100;
-	this->maxEnergyPoints = 100;
-	this->meleeAttackDamage = 30;
-	this->rangedAttackDamage = 20;
-	this->armorDamageReduction = 5;
+	this->energyPoints = 50;
+	this->maxEnergyPoints = 50;
+	this->meleeAttackDamage = 20;
+	this->rangedAttackDamage = 15;
+	this->armorDamageReduction = 3;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &obj) : name(obj.name)
 {
-	std::cout << "Loading..." << this->name << "is prepare for the combat" << std::endl;
+	std::cout << "" << this->name << " created!" << std::endl;
 	this->level = obj.level;
 	this->hitPoints = obj.hitPoints;
 	this->maxHitPoints = obj.maxHitPoints;
@@ -68,12 +68,12 @@ std::string	ScavTrap::challenge[ScavTrap::nChallenge] = {
 
 void	ScavTrap::meleeAttack(std::string const	&target)
 {
-	std::cout << "" << this->name << " attacks " << target << " at melee, causing " << this->meleeAttackDamage << " points of damage! " << std::endl;
+	std::cout << "" << this->name << " attack " << target << " at melee, causing " << this->meleeAttackDamage << " points of damage! " << std::endl;
 }
 
 void	ScavTrap::rangedAttack(std::string const &target)
 {
-	std::cout << "" << this->name << " attacks " << target << " at range, causing " << this->rangedAttackDamage << " points of damage! " << std::endl;
+	std::cout << "" << this->name << " attack " << target << " at range, causing " << this->rangedAttackDamage << " points of damage! " << std::endl;
 }
 
 bool	ScavTrap::takeDamage(unsigned int amount)
