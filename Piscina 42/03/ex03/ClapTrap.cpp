@@ -6,7 +6,7 @@
 /*   By: jschirad <jschirad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 11:46:15 by jschirad          #+#    #+#             */
-/*   Updated: 2020/09/20 12:57:16 by jschirad         ###   ########.fr       */
+/*   Updated: 2020/09/20 17:30:23 by jschirad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,4 +89,9 @@ void ClapTrap::beRepaired(unsigned int amount)
 	}
 	std::cout << this->name << " is repaired for "
 			<< healed << "!" << std::endl;
+}
+
+std::string const &ClapTrap::getName(void)
+{
+	return (this->name);
 }
