@@ -6,7 +6,7 @@
 /*   By: jschirad <jschirad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 11:19:57 by jschirad          #+#    #+#             */
-/*   Updated: 2020/09/14 14:41:21 by jschirad         ###   ########.fr       */
+/*   Updated: 2020/09/20 12:52:06 by jschirad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ScavTrap::ScavTrap(std::string const &name) : name(name)
 {
-	std::cout << "" << this->name << " created!" << std::endl;
+	std::cout << "" << this->name << " -> created!" << std::endl;
 	this->level = 1;
 	this->hitPoints = 100;
 	this->maxHitPoints = 100;
@@ -40,7 +40,7 @@ ScavTrap::ScavTrap(ScavTrap const &obj) : name(obj.name)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << this->name << ": is dead." << std::endl;
+	std::cout << this->name << " -> dead." << std::endl;
 }
 
 ScavTrap	&ScavTrap::operator=(ScavTrap const &obj)
@@ -57,13 +57,13 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &obj)
 	return (*this);
 }
 
-std::string	ScavTrap::challenge[ScavTrap::nChallenge] = {
-	"Te reto a que te vayas a la mierda",
-	"Te reto a que le pegues a tu hermana",
-	"Te reto a que te pares de manos gil1",
-	"Te reto a que me pegues bien duro",
-	"Te reto a un duelo",
-	"No te reto pero vete a tomar por culo"
+std::string	ScavTrap::challenge[6] = {
+	"You versus me! Me versus you! Either way!",
+	"I will prove to you my robotic superiority!",
+	"Dance battle! Or, you know... regular battle.",
+	"Man versus machine! Very tiny streamlined machine!",
+	"Care to have a friendly duel?",
+	"You wanna fight with me?! Put 'em up!.. Put 'em up?"
 };
 
 void	ScavTrap::meleeAttack(std::string const	&target)
@@ -91,17 +91,17 @@ bool	ScavTrap::takeDamage(unsigned int amount)
 
 void	ScavTrap::beRepaired(unsigned int amount)
 {
-	int	sum = amount;
+	int health = amount;
 	this->hitPoints += amount;
 	if (this->hitPoints > this->maxHitPoints)
 	{
-		sum -= (this->hitPoints - this->maxHitPoints);
+	 health -= (this->hitPoints - this->maxHitPoints);
 		this->hitPoints = this->maxHitPoints;
 	}
-	std::cout << "" << this->name << " was repaire for " << sum << " poitns! " << std::endl;
+	std::cout << "" << this->name << " was repaire for " << health << " poitns! " << std::endl;
 }
 
 void	ScavTrap::challengeNewcomer()
 {
-	std::cout << "" << this->name << " - " << ScavTrap::challenge[rand() % ScavTrap::nChallenge] << std::endl;
+	std::cout << "" << this->name << " - " << ScavTrap::challenge[rand() % 6] << std::endl;
 }

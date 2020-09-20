@@ -6,7 +6,7 @@
 /*   By: jschirad <jschirad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 11:20:01 by jschirad          #+#    #+#             */
-/*   Updated: 2020/09/14 14:42:58 by jschirad         ###   ########.fr       */
+/*   Updated: 2020/09/20 12:59:44 by jschirad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	main()
 {
-	std::cout << "|----- Probando FragTrap -----|" << std::endl;
+	std::cout << "| ----- FRAGTRAP ----- |" << std::endl;
 	FragTrap *robot1 = new FragTrap("[RB-42]");
 	srand(time(NULL));
 	robot1->vaulthunter_dot_exe("CL4P-TP");
@@ -31,11 +31,12 @@ int	main()
 	robot1->vaulthunter_dot_exe("CL4P-TP");
 	robot1->vaulthunter_dot_exe("CL4P-TP");
 	robot1->vaulthunter_dot_exe("CL4P-TP");
+	std::cout << std::endl;
 	delete robot1;
 	std::cout << std::endl;
 
 
-	std::cout << "|----- Probando ScavTrap -----|" << std::endl;
+	std::cout << "| ----- SCAVTRAP ----- |" << std::endl;
 	ScavTrap *robot2 = new ScavTrap("[BB-8]");
 	robot2->challengeNewcomer();
 	robot2->meleeAttack("CL4P-TP");

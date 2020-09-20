@@ -6,7 +6,7 @@
 /*   By: jschirad <jschirad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 12:12:04 by jschirad          #+#    #+#             */
-/*   Updated: 2020/09/14 14:43:36 by jschirad         ###   ########.fr       */
+/*   Updated: 2020/09/20 13:00:33 by jschirad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ FragTrap::FragTrap(FragTrap const &obj): ClapTrap(obj.name)
 
 FragTrap::~FragTrap()
 {
-	std::cout << this->name << " destroyed." << std::endl;
+	std::cout << this->name << " -> dead." << std::endl;
 }
 
 FragTrap &FragTrap::operator=(FragTrap const &obj)
@@ -37,13 +37,13 @@ FragTrap &FragTrap::operator=(FragTrap const &obj)
 	return (*this);
 }
 
-std::string FragTrap::quotes[FragTrap::nQuotes] = {
-	"Toma eso maldito!",
-	"Sal de mi camino o moriras!",
-	"Te arrpentiras de esto !",
-	"Fatality !",
-	"Mortality !",
-	"Voy a matarte !"
+std::string FragTrap::quotes[6] = {
+	"I am a tornado of death and bullets!",
+	"Crit-i-cal!",
+	"Loading combat packages!",
+	"Ratattattattatta! Powpowpowpow! Powpowpowpow! Pew-pew, pew-pew-pewpew!",
+	"I am rubber, and you are so dead!",
+	"Take that !"
 };
 
 void FragTrap::vaulthunter_dot_exe(std::string const &target)
@@ -51,15 +51,15 @@ void FragTrap::vaulthunter_dot_exe(std::string const &target)
 		if (this->energyPoints >= 25)
 	{
 		this->energyPoints -= 25;
-		std::cout << this->name << ": "
-				<< FragTrap::quotes[rand() % FragTrap::nQuotes] << std::endl
+		std::cout << this->name << " - "
+				<< FragTrap::quotes[rand() % 6] << std::endl
 				<< this->name << " attack "
 				<< target << " for " << ((rand() % this->meleeAttackDamage) + 1)
 				<< " points of damage!" << std::endl;
 	}
 	else
 	{
-		std::cout << "FR4G-TP " << this->name
+		std::cout << "" << this->name
 				<< " is out of energy!" << std::endl;
 	}
 }

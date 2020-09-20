@@ -6,7 +6,7 @@
 /*   By: jschirad <jschirad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 11:46:15 by jschirad          #+#    #+#             */
-/*   Updated: 2020/09/14 12:28:05 by jschirad         ###   ########.fr       */
+/*   Updated: 2020/09/20 12:57:16 by jschirad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,12 @@ void	ClapTrap::copy(ClapTrap const &obj)
 
 void	ClapTrap::meleeAttack(std::string const &target)
 {
-	std::cout << "ClapTrap " << this->name << " attack " << target << " at melee, causing " << this->meleeAttackDamage << " points of damage!" << std::endl;
+	std::cout << "" << this->name << " attack " << target << " at melee, causing " << this->meleeAttackDamage << " points of damage!" << std::endl;
 }
 
 void	ClapTrap::rangedAttack(std::string const &target)
 {
-	std::cout << "ClapTrap " << this->name << " attack " << target << " at range, causing " << this->rangedAttackDamage << " points of damage!" << std::endl;
+	std::cout << "" << this->name << " attack " << target << " at range, causing " << this->rangedAttackDamage << " points of damage!" << std::endl;
 }
 
 bool ClapTrap::takeDamage(unsigned int amount)

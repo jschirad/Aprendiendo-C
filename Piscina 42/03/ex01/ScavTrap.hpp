@@ -6,7 +6,7 @@
 /*   By: jschirad <jschirad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 10:33:02 by jschirad          #+#    #+#             */
-/*   Updated: 2020/09/14 10:56:02 by jschirad         ###   ########.fr       */
+/*   Updated: 2020/09/20 12:45:28 by jschirad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ private:
 	int	rangedAttackDamage;
 	int	armorDamageReduction;
 
-	static const int nChallenge = 6;
-	static	std::string	challenge[ScavTrap::nChallenge];
+	static	std::string	challenge[6];
 public:
 	ScavTrap(std::string const &name);
 	ScavTrap(ScavTrap const &obj);

@@ -6,7 +6,7 @@
 /*   By: jschirad <jschirad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 12:41:23 by jschirad          #+#    #+#             */
-/*   Updated: 2020/09/14 14:44:05 by jschirad         ###   ########.fr       */
+/*   Updated: 2020/09/20 12:52:14 by jschirad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ ScavTrap::ScavTrap(ScavTrap const &obj):
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << this->name << ": destroyed."  << std::endl;
+	std::cout << this->name << " -> dead." << std::endl;
 }
 
 ScavTrap &ScavTrap::operator=(ScavTrap const &obj)
@@ -40,17 +40,17 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &obj)
 	return (*this);
 }
 
-std::string ScavTrap::challenge[ScavTrap::nChallenge] = {
-	"Te reto a que te vayas a la mierda",
-	"Te reto a que le pegues a tu hermana",
-	"Te reto a que te pares de manos gil1",
-	"Te reto a que me pegues bien duro",
-	"Te reto a un duelo",
-	"No te reto pero vete a tomar por culo"
+std::string ScavTrap::challenge[6] = {
+	"You versus me! Me versus you! Either way!",
+	"I will prove to you my robotic superiority!",
+	"Dance battle! Or, you know... regular battle.",
+	"Man versus machine! Very tiny streamlined machine!",
+	"Care to have a friendly duel?",
+	"You wanna fight with me?! Put 'em up!.. Put 'em up?"
 };
 
-void ScavTrap::challengeNewcomer(void)
+void	ScavTrap::challengeNewcomer()
 {
-	std::cout << this->name << ": ";
-	std::cout << ScavTrap::challenge[rand() % ScavTrap::nChallenge] << std::endl;
+	std::cout << "" << this->name << " - " << ScavTrap::challenge[rand() % 6] << std::endl;
 }
+

@@ -6,7 +6,7 @@
 /*   By: jschirad <jschirad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 12:04:46 by jschirad          #+#    #+#             */
-/*   Updated: 2020/09/14 14:43:44 by jschirad         ###   ########.fr       */
+/*   Updated: 2020/09/20 12:53:27 by jschirad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ class FragTrap : public ClapTrap
 private:
 	FragTrap();
 protected:
-	static const int nQuotes = 6;
-	static std::string quotes[FragTrap::nQuotes];
+	static std::string quotes[6];
 public:
 	FragTrap(std::string const &name);
 	FragTrap(FragTrap const &obj);
